@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="framework.png" width="1000">
+  <br />
+  <br />
+</p> 
 # HR
 Official implement of the paper 'Deep Unified Representation for Heterogeneous Recommendation'.  
 
