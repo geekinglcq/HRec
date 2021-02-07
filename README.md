@@ -1,9 +1,11 @@
 <p align="center">
-  <img src="framework.png" width="1000">
+  <img src="framework.png" width="800">
   <br />
   <br />
-</p> 
-# HR
+</p>   
+
+# HR  
+
 Official implement of the paper 'Deep Unified Representation for Heterogeneous Recommendation'.  
 
 ## Dataset
