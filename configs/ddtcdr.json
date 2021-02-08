@@ -1,0 +1,60 @@
+{
+  "data" : {
+    "name" : "douban",
+    "USER_ID_FIELD" : "user_id",
+    "ITEM_ID_FIELD" : "item_id",
+    "LABEL_FIELD" : "label",
+    "TYPE_FIELD" : "type",
+    "pin_mem" : true,
+    "type" : [ "book", "music", "movie" ],
+    "user_feat_path" :
+        "/Your/Local/Path/data/douban/all_users.csv",
+    "inter_feat_path" :
+        "/Your/Local/Path/data/douban/all_rate.csv",
+    "item_feat_path" : {
+      "book" : "/Your/Local/Path/data/douban/book_item.csv",
+      "music" : "/Your/Local/Path/data/douban/music_item.csv",
+      "movie" : "/Your/Local/Path/data/douban/movie_item.csv"
+    },
+    "feat" : {
+
+      "user_id" : {"type" : "token", "source" : "user"},
+      "item_id" : {"type" : "token", "source" : "item"},
+      "authors" : {"type" : "token", "source" : "item_book"},
+      "publish_year" : {"type" : "token", "source" : "item_book"},
+      "book_douban_score" : {"type" : "token", "source" : "item_book"},
+      "book_douban_votes" : {"type" : "token", "source" : "item_book"},
+      "performer_ids" : {"type" : "token", "source" : "item_music"},
+      "music_douban_score" : {"type" : "token", "source" : "item_music"},
+      "music_douban_votes" : {"type" : "token", "source" : "item_music"},
+      "publish_time" : {"type" : "token", "source" : "item_music"},
+      "directors" : {"type" : "token", "source" : "item_movie"},
+      "year" : {"type" : "token", "source" : "item_movie"},
+      "movie_douban_score" : {"type" : "token", "source" : "item_movie"},
+      "movie_douban_votes" : {"type" : "token", "source" : "item_movie"}
+    },
+    "inter_matrix_type" : "01"
+  },
+           "model" : {
+             "name" : "DDTCDR",
+               "latent_dim": 32,
+             "token_emb_size" : 32,
+               "layers": [64, 32],
+               "alpha": 0.03
+           },
+                     "opt"
+      : {
+        "name" : "Adam",
+        "hyper_params" : {"lr" : 0.001, "weight_decay" : 0.01},
+        "adjust_lr" : false,
+        "scheduler" :
+            {"name" : "ReduceLROnPlateau", "hyper_params" : {"mode" : "min"}},
+        "epochs" : 100,
+        "eval_step" : 2,
+        "batch_size" : 1024,
+        "save_step" : 5,
+        "early_stop" : {"metric" : "auc", "stop_step" : 5, "mode" : "max"}
+      },
+        "path" : {"output" : "/Your/Local/Path/output/"},
+                 "metrics" : ["AUC"]
+}

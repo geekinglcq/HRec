@@ -1,0 +1,54 @@
+
+{
+  "data" : {
+    "name" : "douban",
+    "USER_ID_FIELD" : "user_id",
+    "ITEM_ID_FIELD" : "item_id",
+    "LABEL_FIELD" : "label",
+    "TYPE_FIELD" : "type",
+    "user_feat_path" :
+        "/Your/Local/Path/data/douban/all_users.csv",
+    "inter_feat_path" :
+        "/Your/Local/Path/data/douban/all_rate.csv",
+    "item_feat_path" :
+        "/Your/Local/Path/data/douban/all_item.csv",
+    "feat" : {
+
+      "user_id" : {"type" : "token", "source" : "user"},
+
+      "item_id" : {"type" : "token", "source" : "item"},
+
+      "douban_score" : {"type" : "token", "source" : "item"},
+
+      "douban_votes" : {"type" : "token", "source" : "item"}
+    },
+    "inter_matrix_type" : "01"
+  },
+           "model" : {
+             "name" : "NAIS",
+               "algorithm": "prod",
+
+             "embedding_size" : 64,
+               "weight_size": 64,
+               "split_to": 0,
+               "reg_weights": [1e-7, 1e-7, 1e-5],
+               "alpha": 0,
+               "beta": 0.5,
+             "pretrain_path" : null
+           },
+                     "opt"
+      : {
+        "name" : "Adam",
+        "hyper_params" : {"lr" : 0.001, "weight_decay" : 0.01},
+        "adjust_lr" : false,
+        "scheduler" :
+            {"name" : "ReduceLROnPlateau", "hyper_params" : {"mode" : "min"}},
+        "epochs" : 100,
+        "eval_step" : 2,
+        "batch_size" : 1024,
+        "save_step" : 5,
+        "early_stop" : {"metric" : "auc", "stop_step" : 5, "mode" : "max"}
+      },
+        "path" : {"output" : "/Your/Local/Path/output/"},
+                 "metrics" : ["AUC"]
+}

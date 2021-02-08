@@ -1,0 +1,53 @@
+
+{
+  "data" : {
+    "name" : "douban",
+    "USER_ID_FIELD" : "user_id",
+    "ITEM_ID_FIELD" : "item_id",
+    "LABEL_FIELD" : "label",
+    "TYPE_FIELD" : "type",
+    "user_feat_path" :
+        "/Your/Local/Path/data/douban/all_users.csv",
+    "inter_feat_path" :
+        "/Your/Local/Path/data/douban/all_rate.csv",
+    "item_feat_path" :
+        "/Your/Local/Path/data/douban/all_item_token.csv",
+    "feat" : {
+
+      "user_id" : {"type" : "token", "source" : "user"},
+
+      "item_id" : {"type" : "token", "source" : "item"},
+
+      "type" : {"type" : "token", "source" : "item"},
+      "douban_score" : {"type" : "token", "source" : "item"},
+
+      "douban_votes" : {"type" : "token", "source" : "item"}
+ 
+    },
+    "inter_matrix_type" : "01"
+  },
+           "model" : {
+             "name" : "AutoInt",
+             "embedding_size" : 64,
+             "attention_size" : 16,
+               "n_layers": 3,
+               "num_heads":2,
+               "dropout_probs": [0.2, 0.2, 0.2],
+               "mlp_hidden_size": [128,128]
+           },
+                     "opt"
+      : {
+        "name" : "Adam",
+        "hyper_params" : {"lr" : 0.001, "weight_decay" : 0.01},
+        "adjust_lr" : false,
+        "scheduler" :
+            {"name" : "ReduceLROnPlateau", "hyper_params" : {"mode" : "min"}},
+        "epochs" : 100,
+        "eval_step" : 2,
+        "batch_size" : 1024,
+        "save_step" : 5,
+        "early_stop" : {"metric" : "auc", "stop_step" : 5, "mode" : "max"}
+      },
+        "path" : {"output" : "/Your/Local/Path/output/"},
+                 "metrics" : ["AUC"]
+}
