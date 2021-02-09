@@ -9,8 +9,8 @@
 Official implement of the paper 'Deep Unified Representation for Heterogeneous Recommendation'.  
 
 ## Dataset
-In this paper, we use the Douban dataset stored in `data.zip`. 
-Please unzip it and put it in the working directory.  
+In this paper, we use the Douban dataset stored in `data.tar.xz`. 
+Please uncompress it and put it in the working directory.  
 
 ## Usage 
 
