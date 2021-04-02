@@ -47,10 +47,10 @@ The next step is to prepare the configuration file. We provides the configuratio
 Then, you can run the program in one simple code. Take the DURation model as a example, there is a `duration.json` file in `configs`.  
 
 ```
-python test_h.py duration
+python train_hete.py duration
 ```
 
-It is worth note that the configuration file must be put in `configs`. To test the homogeneous models, just replace `test_h.py` with `test_sample.py`. The program will output the results on screen while save the log to a certain path.  
+It is worth note that the configuration file must be put in `configs`. To test the homogeneous models, just replace `train_hete.py` with `train_homo.py`. The program will output the results on screen while save the log to a certain path.  
 
 ## Models
 
