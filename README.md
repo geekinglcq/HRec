@@ -21,27 +21,6 @@ pip install -r requirements.txt
 ``` 
 Our code is tested on `python 3.7`.  
 
-The next step is to prepare the configuration file. We provides the configurations of our proposed model and baselines in `configs` fold as examples. To reproduce the results report in our paper, one just need to change the path to your local path in the configuration.     
-
-Then, you can run the program in one simple code. Take the DURation model as a example, there is a `duration.json` file in `configs`.  
-
-## Models 
-
-Official implement of the paper 'Deep Unified Representation for Heterogeneous Recommendation'.  
-This project include servel common models for Heterogeneous Recommendation.   
-
-## Dataset
-In this project, we use the douban dataset stored in `data.zip`. Unzip it and put it in the working directory.  
-
-## Usage 
-
-
-Before runing the code, please make sure that you have installed the dependency. You can install them with 
-```
-pip install -r requirements.txt 
-``` 
-Our code is tested on `python 3.7`.  
-
 The next step is to prepare the configuration file. We provides the configurations of our proposed model and baselines in `configs` fold as examples. To reproduce the results report in our paper, one just need  change the path to your local path in the configuration.     
 
 Then, you can run the program in one simple code. Take the DURation model as a example, there is a `duration.json` file in `configs`.  
