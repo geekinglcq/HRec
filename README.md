@@ -6,7 +6,9 @@
 
 # HR  
 
-Official implement of the paper 'Deep Unified Representation for Heterogeneous Recommendation'.  
+Official implement of the paper [Deep Unified Representation for Heterogeneous Recommendation](https://arxiv.org/abs/2201.05861).   
+Accepted by the ACM Web Conference 2022 (WWW '22)  
+[中文版算法介绍](https://zhuanlan.zhihu.com/p/474148693)
 
 ## Dataset
 In this paper, we use the Douban dataset stored in `data.tar.xz`. 
