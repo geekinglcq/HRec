@@ -6,13 +6,13 @@
 
 # HR  
 
-Official implement of the paper [Deep Unified Representation for Heterogeneous Recommendation](https://arxiv.org/abs/2201.05861).   
+Official implementation of the paper [Deep Unified Representation for Heterogeneous Recommendation](https://arxiv.org/abs/2201.05861).   
 Accepted by the ACM Web Conference 2022 (WWW '22)  
 [中文版算法介绍](https://zhuanlan.zhihu.com/p/474148693)
 
 ## Dataset
 In this paper, we use the Douban dataset stored in `data.tar.xz`. 
-Please uncompress it and put it in the working directory.  
+Please uncompress it (`tar -xf data.tar.xz`) and put it in the working directory.  
 
 ## Usage 
 
@@ -23,9 +23,9 @@ pip install -r requirements.txt
 ``` 
 Our code is tested on `python 3.7`.  
 
-The next step is to prepare the configuration file. We provides the configurations of our proposed model and baselines in `configs` fold as examples. To reproduce the results report in our paper, one just need  change the path to your local path in the configuration.     
+The next step is to prepare the configuration file. We provides the configurations of our proposed model (DURation) and baselines in `configs` fold as examples. To reproduce the results report in our paper, one just need change the path to your local path in the configuration.     
 
-Then, you can run the program in one simple code. Take the DURation model as a example, there is a `duration.json` file in `configs`.  
+Then, you can run the program with simple one-line code. Take the DURation model as a example, there is a `duration.json` file in `configs`.  
 
 ```
 python train_hete.py duration
