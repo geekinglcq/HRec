@@ -459,9 +459,3 @@ class SubSet(Dataset):
         for i in feat_fields:
             res[i] = self.df.iloc[idx][i]
         return res
-
-    # def to(self, device):
-    #     """
-    #     Convert data to given device.
-    #     """
-    #     for k in
