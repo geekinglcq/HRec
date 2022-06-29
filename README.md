@@ -48,3 +48,15 @@ Currently, we support the following models:
 + **autoInt**(2019): Autoint: Automatic feature interaction learning via selfattentive neural networks
 + **CCCFNet**(2012): Cross-domain collaboration recommendation
 + **DDTCDR**(2020): DDTCDR: Deep dual transfer cross domain recommendation
+
+## Cite
+
+```
+@inproceedings{lu2022deep,
+  title={Deep Unified Representation for Heterogeneous Recommendation},
+  author={Lu, Chengqiang and Yin, Mingyang and Shen, Shuheng and Ji, Luo and Liu, Qi and Yang, Hongxia},
+  booktitle={Proceedings of the ACM Web Conference 2022},
+  pages={2141--2152},
+  year={2022}
+}
+```
